@@ -1,0 +1,13 @@
+loki_docker_image_version: latest
+loki_docker_memory: 1G
+loki_docker_labels: {}
+loki_docker_network: bridge
+
+loki_data_path: /var/lib/loki
+loki_etc_path: /etc/loki
+
+# https://grafana.com/docs/loki/latest/configuration/
+loki_config: {}
+
+# https://grafana.com/docs/loki/latest/configuration/#use-environment-variables-in-the-configuration
+loki_env_vars: {}
