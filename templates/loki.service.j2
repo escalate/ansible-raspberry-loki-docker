@@ -20,7 +20,7 @@ ExecStart=/usr/bin/docker run \
 {% endif %}
 --mount=type=bind,source={{ loki_data_path }},destination=/loki \
 {% if loki_config | dict2items | length > 0 %}
---mount=type=bind,source={{ loki_etc_path }},destination=/etc/loki/local-config.yaml \
+--mount=type=bind,source={{ loki_etc_path }},destination=/etc/loki \
 {% endif %}
 --network={{ loki_docker_network }} \
 --network-alias=loki \
