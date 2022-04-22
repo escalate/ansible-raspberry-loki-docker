@@ -23,7 +23,6 @@ loki_config: {}
   #       rules_directory: /loki/rules
   #   replication_factor: 1
   #   ring:
-  #     instance_addr: 127.0.0.1
   #     kvstore:
   #       store: inmemory
 
@@ -39,6 +38,9 @@ loki_config: {}
 
   # ruler:
   #   alertmanager_url: http://localhost:9093
+
+  # analytics:
+  #   reporting_enabled: false
 
 # https://grafana.com/docs/loki/latest/configuration/#use-environment-variables-in-the-configuration
 loki_env_vars: {}
