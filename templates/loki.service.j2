@@ -26,7 +26,11 @@ ExecStart=/usr/bin/docker run \
 {% if loki_docker_network not in ['bridge', 'host', 'none'] %}
 --network-alias=loki \
 {% endif %}
---publish=127.0.0.1:3100:3100 \
+{% if loki_docker_publish_ports | length > 0 %}
+{% for port in loki_docker_publish_ports %}
+--publish={{ port }} \
+{% endfor %}
+{% endif %}
 --user=10500:0 \
 grafana/loki:{{ loki_docker_image_version }}
 ExecStop=/usr/bin/docker stop %n

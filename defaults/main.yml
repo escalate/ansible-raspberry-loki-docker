@@ -2,6 +2,8 @@ loki_docker_image_version: latest
 loki_docker_memory: 1G
 loki_docker_labels: {}
 loki_docker_network: bridge
+loki_docker_publish_ports:
+  - 127.0.0.1:3100:3100
 
 loki_data_path: /var/lib/loki
 loki_etc_path: /etc/loki
