@@ -12,7 +12,7 @@
     state: directory
     owner: root
     group: root
-    mode: 0755
+    mode: "0755"
 
 - name: Create data directory
   ansible.builtin.file:
@@ -20,7 +20,7 @@
     state: directory
     owner: loki
     group: root
-    mode: 0775
+    mode: "0775"
 
 - name: Create service configuration
   ansible.builtin.template:
@@ -28,7 +28,7 @@
     dest: "{{ loki_etc_path }}/local-config.yaml"
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   no_log: true
   notify: Restart loki service
 
@@ -38,7 +38,7 @@
     dest: /etc/loki.env
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   notify: Restart loki service
 
 - name: Define Docker container labels
@@ -47,7 +47,7 @@
     dest: /etc/loki.label
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   notify: Restart loki service
 
 - name: Pull Docker image
@@ -61,7 +61,7 @@
     dest: /etc/systemd/system/loki.service
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   notify: Restart loki service
 
 - name: Start service
