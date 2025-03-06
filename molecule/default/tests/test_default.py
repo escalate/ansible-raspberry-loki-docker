@@ -42,5 +42,4 @@ def test_loki_docker_container(host):
     assert d["Config"]["Labels"]["maintainer"] == "me@example.com"
     assert "APP_TEST_ENV=true" in d["Config"]["Env"]
     assert "internal" in d["NetworkSettings"]["Networks"]
-    assert \
-        "loki" in d["NetworkSettings"]["Networks"]["internal"]["Aliases"]
+    assert "loki" in d["NetworkSettings"]["Networks"]["internal"]["Aliases"]
